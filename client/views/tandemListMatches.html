@@ -1,0 +1,15 @@
+<template name="tandemListMatches">
+    <section class="page-container page-tandem-list-matches page-static content-background-color">
+        <div class="rc-header tandem-page-content-header">
+            {{> header
+                sectionName=title
+            }}
+        </div>
+        <div class="content">
+            {{> React
+                component=TandemListMatches
+                matches=getMyMatches
+            }}
+        </div>
+    </section>
+</template>

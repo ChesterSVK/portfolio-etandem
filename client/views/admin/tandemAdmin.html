@@ -1,0 +1,101 @@
+<template name="tandemAdmin">
+    <section class="page-container page-tandem-admin page-static page-settings">
+        {{> header
+                sectionName=title
+        }}
+        <div class="content">
+            <div class="rocket-form">
+                <div class="section section-collapsed">
+                    <div class="section-title expand">
+                        <div class="section-title-text">
+                            {{generalSettingsTitle}}
+                        </div>
+                        <div class="section-title-right">
+                            <button class="rc-button rc-button--nude"><i class="icon-angle-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="section-content border-component-color">
+                        {{#each infoGeneralFields}}
+                            <div class="input-line double-col">
+                                <label class="setting-label" title="theme-color-rc-color-error">
+                                    {{fieldName}}
+                                </label>
+                                <div class="settings-field">
+                                    <p class="tandem-setting-field-value">
+                                        {{fieldValue}}
+                                    </p>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="section section-collapsed">
+                    <div class="section-title expand">
+                        <div class="section-title-text">
+                            {{languageSettingsTitle}}
+                        </div>
+                        <div class="section-title-right">
+                            <button class="rc-button rc-button--nude"><i class="icon-angle-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="section-content border-component-color">
+                        <div class="tandem-language-statistics-table-parent">
+                            {{# with infoLangTableData}}
+                                <table class="tandem-language-statistics-table">
+                                    <thead>
+                                    <tr>
+                                        {{#each tableHeaderRows}}
+                                            <th>
+                                                {{this}}
+                                            </th>
+                                        {{/each}}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{#each languageDataRows}}
+                                        <tr>
+                                            <td>
+                                                {{langName}}
+                                            </td>
+                                            <td>
+                                                {{langInTeach}}
+                                            </td>
+                                            <td>
+                                                {{langInLearn}}
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                    </tbody>
+                                </table>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+                <div class="section section-collapsed">
+                    <div class="section-title expand">
+                        <div class="section-title-text">
+                            {{developerSettingsTitle}}
+                        </div>
+                        <div class="section-title-right">
+                            <button class="rc-button rc-button--nude"><i class="icon-angle-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="section-content border-component-color">
+                        {{#each developerDatabaseOptions}}
+                            <div class="input-line double-col">
+                                <label class="setting-label" title="theme-color-rc-color-error">
+                                    {{optionName}}
+                                </label>
+                                <div class="settings-field">
+                                    <button id="{{actionId}}" class="button primary confirmation-button">
+                                        {{optionButtonText}}
+                                    </button>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

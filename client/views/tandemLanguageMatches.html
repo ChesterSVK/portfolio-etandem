@@ -1,0 +1,15 @@
+<template name="tandemLanguageMatches">
+    <section class="page-container page-tandem-language-matches page-static content-background-color">
+        <div class="rc-header tandem-page-content-header">
+            {{> header
+                sectionName=title
+            }}
+        </div>
+        <div class="content">
+            {{> React
+                component=MatchMaking
+                languageMatches=getLanguageMatches
+            }}
+        </div>
+    </section>
+</template>

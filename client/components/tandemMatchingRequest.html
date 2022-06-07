@@ -1,0 +1,29 @@
+<template name="tandemMatchingRequest">
+    <div class="tandemMatchingRequestHolder">
+        {{#if showMatchingRequest}}
+        <section class="tandem-request">
+            <button class="rc-button rc-button--icon rc-button--success js-button-accept" type="submit">
+                {{getAcceptText}}
+            </button>
+            <button class="rc-button rc-button--icon rc-button--cancel js-button-decline" type="submit">
+                {{getDeclineText}}
+            </button>
+        </section>
+        {{/if}}
+        {{# with Match}}
+            {{#if showFlash}}
+            <section class="tandem-request-flash flash-bg-{{status}}">
+                {{_ "Request_status"}}{{_ status}}
+                <span class="tandem-request-close-holder">
+                            <button class="contextual-bar__header-close js-close-flash">
+                                {{> icon
+                                    block="contextual-bar__header-close-icon"
+                                    icon="plus"
+                                }}
+                            </button>
+                        </span>
+            </section>
+            {{/if}}
+        {{/with}}
+    </div>
+</template>

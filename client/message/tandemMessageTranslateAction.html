@@ -1,0 +1,28 @@
+<template name="tandemMessageTranslateAction">
+    {{#if showTranslation}}
+        <section class="tandem-translated-message">
+            <div class="message-loading">
+                {{#if isLoading}}
+                    {{> loading}}
+                {{/if}}
+            </div>
+            {{#with translatedMessage}}
+                <div class="tandem-message-translated translation-bubble">
+                    <div class="message-text">
+                        {{text}}
+                    </div>
+                    <button class="message-close">
+                        {{> icon block="rc-popover__close js-close" icon="plus" }}
+                    </button>
+                </div>
+                <div class="tandem-message-translation-buttons">
+                    {{#each languages}}
+                        <div class="translate-to-language-btn" data-lang="{{this}}" data-message="{{getMessageId}}">
+                            {{this}}
+                        </div>
+                    {{/each}}
+                </div>
+            {{/with}}
+        </section>
+    {{/if}}
+</template>

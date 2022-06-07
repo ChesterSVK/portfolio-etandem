@@ -1,0 +1,20 @@
+<template name="tandemLanguagePreferences">
+    <section class="page-container page-tandem-language-preferences page-static content-background-color">
+        <div class="rc-header tandem-page-content-header">
+            {{> header
+                sectionName=title
+            }}
+        </div>
+        <div class="content">
+            {{> React
+                component=TandemPreferences
+                languages=getTandemLanguages
+                teachingLangs=getTeachingPreferences
+                learningLangs=getLearningPreferences
+            }}
+        </div>
+        <div>
+            {{> tandemLoading}}
+        </div>
+    </section>
+</template>
